@@ -1,4 +1,4 @@
-package com.sping.redis.repository;
+package com.spring.redis.cache.repository;
 
 import java.util.List;
 
@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.sping.redis.entity.Product;
+import com.spring.redis.cache.entity.Product;
 
 @Repository
 public class ProductDao {
-	private static final String HASH_KEY = "Product";
+	private static final String HASH_KEY = "ProductCacheable";
 	
 	@Autowired
 	@Qualifier("MyRedis")
@@ -27,6 +27,7 @@ public class ProductDao {
 	}
 	
 	public Product findProductById(int id) {
+		System.out.println("####DAO findProductById####");
 		return (Product) redisTemplate.opsForHash().get(HASH_KEY, id);
 	}
 	

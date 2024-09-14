@@ -1,4 +1,4 @@
-package com.sping.redis.config;
+package com.spring.redis.cache.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

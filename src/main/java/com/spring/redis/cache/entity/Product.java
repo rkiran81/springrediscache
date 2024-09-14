@@ -1,4 +1,4 @@
-package com.sping.redis.entity;
+package com.spring.redis.cache.entity;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@RedisHash("Product")
+@RedisHash("ProductCacheable")
 public class Product implements Serializable {
 	/**
 	 * 
